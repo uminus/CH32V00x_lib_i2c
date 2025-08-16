@@ -1,4 +1,4 @@
-# CH32V003_lib_i2c          Ver 5.4
+# CH32V00x_lib_i2c          Ver 5.5
 
 ## Library Description
 `lib_i2c` is a fully featured, but lightweight library for the I2C peripheral
@@ -11,10 +11,14 @@ on the CH32V003 with the following features:
 * Funcion to Scan the Interface for devices
 * Master Mode Only
 
-Based on [CNLohr's ch32fun](https://github.com/cnlohr/ch32fun)
+
+## Links
+[CNLohr's ch32fun](https://github.com/cnlohr/ch32fun)
+[PlatformIO Template](https://github.com/mattybigback/CH32V003_lib_i2c)
 
 
 ## Changelog
+* `v5.5` - Adapted funconfig.h to modern ch32fun. Slight change to demo. Tested on CH32V006
 * `v5.4` - Added a `read_reg_delay()` function for when clock-stretching is inadequate
 * `v5.3` - Added an easier user-definable clock-stretch timout variable
 * `v5.2` - Fixed a define bug in the header - Testing complete of multi-byte registers
@@ -35,13 +39,12 @@ Based on [CNLohr's ch32fun](https://github.com/cnlohr/ch32fun)
 * Neaten library so there are less repeated chunks of code
 * Test on other MCU Variants:
 	* CH32V003 ✔️
+	* CH32V006 ✔️
 
 
 ## Thanks
 Thank you [niansa](https://github.com/niansa) for continued help refining the library  
 Thank you [Johannes JKT](https://github.com/DeadBugEngineering) for fixing an i2c_read off_by_one bug  
-
-If you want to use ANY pins for I2C, see [lib_swi2c](https://github.com/ADBeta/CH32Vxxx_lib_swi2c)
 
 ----
 Copyright (c) 2024 - 2025 ADBeta

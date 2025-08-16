@@ -2,9 +2,9 @@
 * Basic Example of using lib_i2c on the CH32V003 Microcontroller
 *
 *
-* Demo Version 3.2    18 July 2025 
+* Demo Version 3.3    16 Aug 2025 
 * See GitHub Repo for more information: 
-* https://github.com/ADBeta/CH32V003_lib_i2c
+* https://github.com/ADBeta/CH32V00x_lib_i2c
 *
 *
 * Notes:
@@ -56,7 +56,7 @@ int main()
 	// NOTE: This demo example is using a DS3231 RTC
 	i2c_device_t dev = {
 		.clkr = I2C_CLK_400KHZ,
-		.type = I2C_ADDR_10BIT,
+		.type = I2C_ADDR_7BIT,
 		.addr = 0x68,
 		.regb = 1,
 		.tout = 2000,
@@ -68,7 +68,7 @@ int main()
 	// Initialising I2C causes the pins to transition from LOW to HIGH.
 	// Wait 100ms to allow the I2C Device to timeout and ignore the transition.
 	// Otherwise, an extra 1-bit will be added to the next transmission
-	Delay_Ms(100);
+	Delay_Ms(250);
 
 	// Scan the I2C Bus, prints any devices that respond
 	printf("----Scanning I2C Bus for Devices----\n");
