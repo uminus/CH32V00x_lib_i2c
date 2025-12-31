@@ -240,10 +240,11 @@ i2c_err_t i2c_ping(const uint8_t addr)
 	
 	// Wait for the bus to become free
 	i2c_err_t i2c_ret = i2c_wait();
+    if (i2c_ret != I2C_OK) return i2c_ret;
 
 	// Send the address and get the status
 	i2c_start();
-	if(i2c_ret == I2C_OK) i2c_ret = i2c_send_addr(I2C_WRITE, &tmp_dev);
+	i2c_ret = i2c_send_addr(I2C_WRITE, &tmp_dev);
 
 	// Signal a STOP
 	i2c_stop();
